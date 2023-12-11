@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "e519bcfc-cca8-4b39-99cd-b5597685101f",
+		"name": "TodoUnifi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19178013"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ahmedyousry\",\r\n    \"email\": \"ahmedyousry098@gmail.com\",\r\n    \"password\": \"Ahmed@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahmedyousry098@gmail.com\",\r\n    \"password\": \"Ahmed@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Authentication Task\",\r\n    \"description\": \"Register & Login Api\",\r\n    \"status\": \"todo\", // OR doing || done,\r\n    \"deadline\": \"12-12-2023\",\r\n    \"assignedTo\": \"652d3f1ac2ff3f72e8962c9a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/todo/add",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"todo",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Authentication Task\",\r\n    \"description\": \"Register & Login Api\",\r\n    \"status\": \"todo\", // OR doing || done,\r\n    \"deadline\": \"12-12-2023\",\r\n    \"assignedTo\": \"652d3f1ac2ff3f72e8962c9a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/652d3f1ac2ff3f72e8962c9a",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"652d3f1ac2ff3f72e8962c9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/652d3f1ac2ff3f72e8962c9a",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"652d3f1ac2ff3f72e8962c9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/652d3f1ac2ff3f72e8962c9a",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"652d3f1ac2ff3f72e8962c9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/652d3f1ac2ff3f72e8962c9a/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"652d3f1ac2ff3f72e8962c9a",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
