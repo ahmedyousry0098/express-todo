@@ -61,3 +61,13 @@ export const getTodo: RequestHandler = async (req: Request, res: Response, next:
     }
     return res.status(200).json({message: 'Todo Deleted Successfully', todo})
 }
+
+export const getUserTodos: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+    const {userId} = req.params
+    const user = await UserModel.findById(userId) 
+    if (!user) {
+        return next(new ResponseError('User Not Found', 400))
+    }
+    const todos = await TodoModel.find({assignedTo: user._id})
+    return res.status(200).json({message: `${user.username} todos: `, todos})
+}

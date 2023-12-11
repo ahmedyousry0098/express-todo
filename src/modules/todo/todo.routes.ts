@@ -35,4 +35,8 @@ todoRouter.get(
     asyncHandler(getTodo)
 )
 
+todoRouter.get(
+    `/:userId/all`
+)
+
 export default todoRouter
