@@ -1,6 +1,7 @@
 import express from 'express'
 import { connectDB } from './db/connection'
 import userRouter from './src/modules/user/user.routes'
+import todoRouter from './src/modules/todo/todo.routes'
 import cors from 'cors'
 import { globalErrorHandler } from './src/utils/errHandling'
 import {config} from 'dotenv'
@@ -14,6 +15,7 @@ app.use(cors())
 connectDB()
 
 app.use('/auth', userRouter)
+app.use('/todo', todoRouter)
 app.all('*', (req, res, next) => {
     return res.status(404).json({message: 'In-valid Method Or Url'})
 })
