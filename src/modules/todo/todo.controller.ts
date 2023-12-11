@@ -49,3 +49,15 @@ export const deleteTodo: RequestHandler = async (req: Request, res: Response, ne
     }
     return res.status(200).json({message: 'Todo Deleted Successfully'})
 }
+
+export const getTodo: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+    const {todoId} = req.params
+    const todo = await TodoModel.findById(todoId).populate({
+        path: 'User',
+        select: '-password'
+    })
+    if (!todo) {
+        return next (new ResponseError('Todo Not Found', 404))
+    }
+    return res.status(200).json({message: 'Todo Deleted Successfully', todo})
+}
